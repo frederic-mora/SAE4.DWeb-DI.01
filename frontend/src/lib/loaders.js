@@ -22,7 +22,7 @@ export async function fetchTestimonialData(teamName){
 }
 
 export async function fetchPricingData(){
-    let answer = await fetch('/src/lib/data/pricing-data.json');
+    let answer = await fetch('http://localhost:8080/api/pricing');
     let data = await answer.json();
     return data;  
 }

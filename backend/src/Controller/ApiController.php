@@ -45,4 +45,11 @@ class ApiController extends AbstractController
         $response = new JsonResponse( $data );
         return $response;
     }
+
+    #[Route('/api/pricing', name: 'app_api_pricing')]
+    public function pricing(): Response
+    {
+        $data = file_get_contents('pricing-data.json'); // avec pricing-data.json dans /public de symphony
+        return new Response($data);
+    }
 }
