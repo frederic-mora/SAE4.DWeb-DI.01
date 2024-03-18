@@ -34,8 +34,11 @@ docker-compose run --rm frontend npm install
 # Installe les dépendances pour le backend
 docker-compose run --rm backend composer install
 
+# Lance l'environnement Docker
+docker-compose up -d
+
 # Lance les migrations pour avoir une base de données fonctionnelle
-docker-compose run --rm backend php bin/console doctrine:migrations:migrate --no-interaction
+docker exec sae-backend php bin/console doctrine:migrations:migrate --no-interaction
 ```
 
 ## Lancer l'environnement
@@ -46,4 +49,4 @@ docker-compose up -d
 ## Liens
 - Frontend : [http://localhost:8090](http://localhost:8090)
 - Backend : [http://localhost:8080](http://localhost:8080)
-- phpMyAdmin : [http://localhost:8788](http://localhost:8788)
+- phpMyAdmin : [http://localhost:8070](http://localhost:8070)
